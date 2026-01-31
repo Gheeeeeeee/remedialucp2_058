@@ -6,12 +6,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.remedialucp2_058.repository.ContainerApp
-import com.example.remedialucp2_058.viewmodel.ViewModelFactory
-import com.example.remedialucp2_058.viewmodel.BukuViewModel
-import com.example.remedialucp2_058.view.HalamanHome
-import com.example.remedialucp2_058.view.HalamanBuku
-import com.example.remedialucp2_058.view.route.DestinasiHome
-import com.example.remedialucp2_058.view.route.DestinasiBuku
+import com.example.remedialucp2_058.viewmodel.*
+import com.example.remedialucp2_058.view.*
+import com.example.remedialucp2_058.view.route.*
 
 @Composable
 fun PetaNavigasi(container: ContainerApp) {
@@ -22,6 +19,7 @@ fun PetaNavigasi(container: ContainerApp) {
         navController = navController,
         startDestination = DestinasiHome.route
     ) {
+
         composable(DestinasiHome.route) {
             HalamanHome(navController)
         }
@@ -29,6 +27,11 @@ fun PetaNavigasi(container: ContainerApp) {
         composable(DestinasiBuku.route) {
             val vm: BukuViewModel = viewModel(factory = factory)
             HalamanBuku(navController, vm)
+        }
+
+        composable(DestinasiTambahBuku.route) {
+            val vm: BukuEntryViewModel = viewModel(factory = factory)
+            HalamanTambahBuku(navController, vm)
         }
     }
 }

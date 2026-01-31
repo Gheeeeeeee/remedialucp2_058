@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.matkul"
+    namespace = "com.example.remedialucp_058"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.matkul"
+        applicationId = "com.example.remedialucp2_058"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
